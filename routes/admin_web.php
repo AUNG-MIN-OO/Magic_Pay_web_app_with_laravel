@@ -10,7 +10,8 @@ Auth::routes();
 Route::prefix('admin')
        ->middleware('auth:admin_user')
        ->namespace('Backend')
+       ->name('admin.')
        ->group(function (){
-            Route::get('/','PageController@home');
+            Route::get('/','PageController@home')->name('home');
 });
 
