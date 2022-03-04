@@ -11,3 +11,4 @@ Route::get("/","Frontend\PageController@home");
 
 Route::get("/admin/login","Auth\AdminLoginController@showLoginForm");
 Route::post("/admin/login","Auth\AdminLoginController@login")->name("admin.login");
+Route::post("/admin/logout","Auth\AdminLoginController@logout")->name("admin.logout");

@@ -12,6 +12,10 @@ Route::prefix('admin')
        ->namespace('Backend')
        ->name('admin.')
        ->group(function (){
-            Route::get('/','PageController@home')->name('home');
+           Route::get('/','PageController@home')->name('home');
+
+            ##admin user management routes
+           Route::resource('user','AdminUserController');
+           Route::get('user/datatable/ssd','AdminUserController@ssd');
 });
 

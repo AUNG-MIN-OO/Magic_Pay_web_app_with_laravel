@@ -9,8 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Magic Pay</title>
-    <link href="{{asset('backend/css/main.css')}}" rel="stylesheet"></head>
+    <link href="{{asset('backend/css/main.css')}}" rel="stylesheet">
+{{--    datatable css--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
+@yield('styles')
+</head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 
@@ -55,4 +62,52 @@
     </div>
 </div>
 <script type="text/javascript" src="{{asset('backend/js/main.js')}}"></script></body>
+{{--datatable js--}}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
+{{--js validation--}}
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{{--sweetalert 2--}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@yield('scripts')
+<script>
+
+    $(document).ready(function (){
+        let token = document.head.querySelector('meta[name="csrf-token"]');
+        if (token){
+            $.ajaxSetup({
+                headers : {
+                    'X-CSRF_TOKEN' : token.content
+                }
+            })
+        }
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        @if(session('success'))
+
+        Toast.fire({
+            icon: 'success',
+            title: '{{session('success')}}'
+        })
+
+        @endif
+    })
+
+</script>
+
 </html>

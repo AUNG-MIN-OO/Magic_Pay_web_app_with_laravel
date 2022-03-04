@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6490ae-d18d-4976-baa4-8f3e3208bc6e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +129,11 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/proengsoft/laravel-jsvalidation" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
     </include_path>
   </component>
   <component name="ProjectId" id="25pgOdWFt6y7iIWFPlEqgv4AhMj" />
@@ -166,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646229410771</updated>
-      <workItem from="1646229414064" duration="11247000" />
+      <workItem from="1646229414064" duration="28581000" />
     </task>
     <servers />
   </component>
