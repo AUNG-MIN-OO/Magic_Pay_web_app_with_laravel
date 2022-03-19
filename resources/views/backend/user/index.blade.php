@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('admin-user-active','mm-active')
+@section('user-active','mm-active')
 @section('icon','pe-7s-users')
 @section('content-title','Admin List')
 @section('styles')
@@ -40,12 +40,12 @@
             var table = $('.datatable').DataTable( {
                 "processing": true,
                 "serverSide": true,
-                "ajax": "/admin/admin-user/datatable/ssd",
+                "ajax": "/admin/user/datatable/ssd",
                 "columns" : [
                     { data : 'name', name : 'name', sortable: false},
                     { data : 'email', name : 'email'},
                     { data : 'phone', name : 'phone'},
-                    { data : 'ip', name : 'ip'},
+                    { data : 'ip_address', name : 'ip'},
                     { data : 'user_agent', name : 'user_agent'},
                     { data : 'created_at', name : 'created_at'},
                     { data : 'updated_at', name : 'updated_at'},
@@ -81,11 +81,10 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url : '/admin/admin-user/'+id,
+                            url : '/admin/user/'+id,
                             type : 'post',
-                            data: {_method: 'delete'},
+                            data : {_method: 'delete'},
                             success : function (){
-                                console.log('deleted');
                                 table.ajax.reload();
                             }
                         })

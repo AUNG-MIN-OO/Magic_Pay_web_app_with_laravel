@@ -42,13 +42,26 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Admin Management</li>
                 <li>
-                    <a href="{{route('admin.user.index')}}" class="@yield('admin-user-active')">
+                    <a href="{{route('admin.admin-user.index')}}" class="@yield('admin-user-active')">
                         <i class="metismenu-icon pe-7s-users"></i>
                         <span class="text-capitalize">Admin List</span>
                     </a>
-                    <a href="{{route('admin.user.create')}}" class="@yield('admin-user-create-active')">
+                    <a href="{{route('admin.admin-user.create')}}" class="@yield('admin-user-create-active')">
                         <i class="metismenu-icon pe-7s-add-user"></i>
                         <span class="text-capitalize">Add new Admin</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="vertical-nav-menu">
+                <li class="app-sidebar__heading">User Management</li>
+                <li>
+                    <a href="{{route('admin.user.index')}}" class="@yield('user-active')">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        <span class="text-capitalize">User List</span>
+                    </a>
+                    <a href="{{route('admin.user.create')}}" class="@yield('user-create-active')">
+                        <i class="metismenu-icon pe-7s-add-user"></i>
+                        <span class="text-capitalize">Add new User</span>
                     </a>
                 </li>
             </ul>

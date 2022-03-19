@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAdminUser extends FormRequest
+class UpdateUser extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,11 @@ class UpdateAdminUser extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route('admin_user');
+        $id = $this->route('user');
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:admin_users,email,' . $id,
-            'phone' => 'required|unique:admin_users,phone,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
+            'phone' => 'required|unique:users,phone,' . $id,
         ];
     }
 }

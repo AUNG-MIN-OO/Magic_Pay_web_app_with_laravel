@@ -2,62 +2,61 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\AdminUser;
+use App\Http\Requests\StoreUser;
+use App\User;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreAdminUser;
-use App\Http\Requests\UpdateAdminUser;
+use App\Http\Requests\UpdateUser;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Jenssegers\Agent\Agent;
 use Yajra\DataTables\DataTables;
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     public function index(){
-        return view('backend.admin_user.index');
+        return view('backend.user.index');
     }
 
     public function create(){
-        return view('backend.admin_user.create');
+        return view('backend.user.create');
     }
 
-    public function store(StoreAdminUser $request){
-        $admin_user = new AdminUser();
-        $admin_user->name = $request->name;
-        $admin_user->email = $request->email;
-        $admin_user->phone = $request->phone;
-        $admin_user->password = Hash::make($request->password);
-        $admin_user->save();
+    public function store(StoreUser $request){
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
-        return redirect()->route('admin.admin-user.index')->with('success','New admin is added!');
+        return redirect()->route('admin.user.index')->with('success','New user is added!');
     }
 
     public function edit($id){
-        $admin_user = AdminUser::findOrFail($id);
-        return view('backend.admin_user.edit',compact('admin_user'));
+        $user = User::findOrFail($id);
+        return view('backend.user.edit',compact('user'));
     }
 
-    public function update(UpdateAdminUser $request, $id){
+    public function update(UpdateUser $request, $id){
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = $request->passwrod ? Hash::make($request->password) : $user->password;
+        $user->update();
 
-        $admin_user = AdminUser::findOrFail($id);
-        $admin_user->name = $request->name;
-        $admin_user->email = $request->email;
-        $admin_user->phone = $request->phone;
-        $admin_user->password = $request->passwrod ? Hash::make($request->password) : $admin_user->password;
-        $admin_user->update();
-
-        return redirect()->route('admin.admin-user.index')->with('success','Admin user info is updated!');
+        return redirect()->route('admin.user.index')->with('success','User info is updated!');
 
     }
 
     public function destroy($id){
-        $admin_user = AdminUser::findOrFail($id);
-        $admin_user->delete();
-        return redirect()->route('admin.admin-user.index')->with('success','Admin user is deleted!');
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('admin.user.index')->with('success','User is deleted!');
     }
 
     public function ssd(){
-        $data = AdminUser::query();
+        $data = User::query();
 
         return DataTables::of($data)
             ->editColumn('user_agent',function ($each){
@@ -95,7 +94,7 @@ class AdminUserController extends Controller
                 return Carbon::parse($each->updated_at)->format('Y-m-d H:i:s');
             })
             ->addColumn('action',function ($each){
-                $edit_icon = '<a href="'.route('admin.admin-user.edit',$each->id).'"class="btn btn-sm btn-warning mr-2"><i class="fas fa-user-edit"></i></a>';
+                $edit_icon = '<a href="'.route('admin.user.edit',$each->id).'"class="btn btn-sm btn-warning mr-2"><i class="fas fa-user-edit"></i></a>';
                 $delete_icon = '<a href="#" class="delete-admin btn btn-sm btn-danger" data-id="'.$each->id.'"><i class="fas fa-trash-alt"></i></a>';
                 return $edit_icon . $delete_icon;
             })

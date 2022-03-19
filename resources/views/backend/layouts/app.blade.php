@@ -48,7 +48,7 @@
                 </div>
 
 {{--                content start--}}
-                <div class="row">
+                <div class="row mb-4">
                     @yield('content')
                 </div>
 {{--                content end--}}

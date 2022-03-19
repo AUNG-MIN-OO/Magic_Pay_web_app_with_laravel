@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 @include('backend.layouts.flash')
-                <form action="{{route('admin.user.store')}}" method="post" id="admin_create">
+                <form action="{{route('admin.admin-user.store')}}" method="post" id="admin_create">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name</label>

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
-@section('admin-user-edit-active','mm-active')
-@section('icon','pe-7s-note')
-@section('content-title','Edit Admin')
+@section('user-create-active','mm-active')
+@section('icon','pe-7s-add-user')
+@section('content-title','Add New Admin')
 @section('styles')
 @endsection
 @section('content')
@@ -9,26 +9,25 @@
         <div class="card">
             <div class="card-body">
                 @include('backend.layouts.flash')
-                <form action="{{route('admin.admin-user.update',$admin_user->id)}}" method="post" id="admin_update">
+                <form action="{{route('admin.user.store')}}" method="post" id="user_create">
                     @csrf
-                    @method('put')
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" value="{{$admin_user->name}}">
+                        <input type="text" name="name" class="form-control">
                         @error('name')
-                        <small class="text-danger font-weight-bolder">{{"*".$message}}</small>
+                            <small class="text-danger font-weight-bolder">{{"*".$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" value="{{$admin_user->email}}">
+                        <input type="email" name="email" class="form-control">
                         @error('email')
                         <small class="text-danger font-weight-bolder">{{"*".$message}}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="number" name="phone" class="form-control" value="{{$admin_user->phone}}">
+                        <input type="number" name="phone" class="form-control">
                         @error('phone')
                         <small class="text-danger font-weight-bolder">{{"*".$message}}</small>
                         @enderror
@@ -50,7 +49,7 @@
     </div>
 @endsection
 @section('scripts')
-    {!! JsValidator::formRequest('App\Http\Requests\UpdateAdminUser', '#admin_update') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\StoreUser', '#user_create') !!}
     <script>
         $(document).ready(function() {
 
