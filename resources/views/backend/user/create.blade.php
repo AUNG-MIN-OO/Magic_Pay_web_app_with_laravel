@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 @section('user-create-active','mm-active')
 @section('icon','pe-7s-add-user')
-@section('content-title','Add New Admin')
+@section('content-title','Add New User')
 @section('styles')
 @endsection
 @section('content')

@@ -5,25 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6490ae-d18d-4976-baa4-8f3e3208bc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_3_15_22__10_03_PM.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_19_044504_add_other_column_to_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/user/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/user/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/user/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/user/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/UUIDGenerate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/WalletController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Wallet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_19_113006_create_wallets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/wallet/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app_plain.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MagicPay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MagicPay.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateAdminUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateAdminUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin_user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin_user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin_user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin_user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/admin_user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/admin_user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin_web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin_web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +178,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -187,8 +192,9 @@
       <recent name="$PROJECT_DIR$/public/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/frontend" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/layouts" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +212,9 @@
       <option name="presentableId" value="Default" />
       <updated>1646229410771</updated>
       <workItem from="1646229414064" duration="28717000" />
-      <workItem from="1647349411746" duration="10577000" />
+      <workItem from="1647349411746" duration="21605000" />
+      <workItem from="1647744564798" duration="6577000" />
+      <workItem from="1648363199721" duration="11347000" />
     </task>
     <servers />
   </component>
@@ -223,6 +231,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

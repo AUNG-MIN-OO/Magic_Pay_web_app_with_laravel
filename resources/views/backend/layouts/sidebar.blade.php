@@ -63,6 +63,10 @@
                         <i class="metismenu-icon pe-7s-add-user"></i>
                         <span class="text-capitalize">Add new User</span>
                     </a>
+                    <a href="{{route('admin.wallet.index')}}" class="@yield('user-wallet-active')">
+                        <i class="metismenu-icon pe-7s-wallet"></i>
+                        <span class="text-capitalize">Wallet</span>
+                    </a>
                 </li>
             </ul>
         </div>

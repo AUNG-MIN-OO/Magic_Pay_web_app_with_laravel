@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Helpers\UUIDGenerate;
 use App\Http\Requests\StoreUser;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUser;
+use App\Wallet;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Jenssegers\Agent\Agent;
 use Yajra\DataTables\DataTables;
@@ -22,13 +25,36 @@ class UserController extends Controller
     }
 
     public function store(StoreUser $request){
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->password = Hash::make($request->password);
-        $user->save();
 
+        //to avoid db fail for two process
+        //reference in laravel db transaction
+        DB::beginTransaction();
+
+        try {
+
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            Wallet::firstOrCreate(
+                [
+                    'user_id' => $user->id,
+                ],
+                [
+                    'account_number' => UUIDGenerate::accountNumber(),
+                    'amount' => 0,
+                ]
+            );
+
+        }
+        catch (\Exception $exception){
+            return back()->with('error','Something went wrong! Please try again.');
+        }
+
+        DB::commit();
         return redirect()->route('admin.user.index')->with('success','New user is added!');
     }
 
@@ -38,13 +64,36 @@ class UserController extends Controller
     }
 
     public function update(UpdateUser $request, $id){
-        $user = User::findOrFail($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->password = $request->passwrod ? Hash::make($request->password) : $user->password;
-        $user->update();
 
+        DB::beginTransaction();
+
+        try {
+
+            $user = User::findOrFail($id);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->password = $request->passwrod ? Hash::make($request->password) : $user->password;
+            $user->update();
+
+            Wallet::firstOrCreate(
+                [
+                    'user_id' => $user->id,
+                ],
+                [
+                    'account_number' => UUIDGenerate::accountNumber(),
+                    'amount' => 0,
+                ]
+            );
+
+        }
+        catch (\Exception $exception){
+
+            return back()->with('error','Something went wrong! Please try again.');
+
+        }
+
+        DB::commit();
         return redirect()->route('admin.user.index')->with('success','User info is updated!');
 
     }

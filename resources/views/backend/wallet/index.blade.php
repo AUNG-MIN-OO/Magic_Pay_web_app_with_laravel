@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
-@section('user-active','mm-active')
-@section('icon','pe-7s-users')
-@section('content-title','User List')
+@section('user-wallet-active','mm-active')
+@section('icon','pe-7s-wallet')
+@section('content-title','Users Wallet')
 @section('styles')
     <style>
         table tr th{
@@ -15,16 +15,13 @@
             <div class="card-body">
                 <table class="table table-dark table-striped table-hover table-bordered datatable">
                     <thead>
-                        <tr>
-                            <th class="no-sort">name</th>
-                            <th class="no-sort">email</th>
-                            <th class="no-sort">phone</th>
-                            <th class="no-sort">ip</th>
-                            <th class="no-sort">user agent</th>
-                            <th class="no-sort">created date</th>
-                            <th>updated date</th>
-                            <th class="no-sort">action</th>
-                        </tr>
+                    <tr>
+                        <th class="no-sort">account number</th>
+                        <th class="no-sort">owner name</th>
+                        <th class="no-sort">amount (MMK)</th>
+                        <th class="no-sort">created date</th>
+                        <th>updated date</th>
+                    </tr>
                     </thead>
                     <tbody>
 
@@ -40,19 +37,16 @@
             var table = $('.datatable').DataTable( {
                 "processing": true,
                 "serverSide": true,
-                "ajax": "/admin/user/datatable/ssd",
+                "ajax": "/admin/wallet/datatable/ssd",
                 "columns" : [
-                    { data : 'name', name : 'name', sortable: false},
-                    { data : 'email', name : 'email'},
-                    { data : 'phone', name : 'phone'},
-                    { data : 'ip_address', name : 'ip'},
-                    { data : 'user_agent', name : 'user_agent'},
+                    { data : 'account_number', name : 'account_number', sortable: false},
+                    { data : 'owner_name', name : 'owner_name'},
+                    { data : 'amount', name : 'amount'},
                     { data : 'created_at', name : 'created_at'},
                     { data : 'updated_at', name : 'updated_at'},
-                    { data : 'action', name : 'action'},
                 ],
                 order:[
-                  [6,'desc']
+                    [4,'desc']
                 ],
                 columnDefs: [
                     {

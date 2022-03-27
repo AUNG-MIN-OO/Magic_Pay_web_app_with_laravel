@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 @section('user-edit-active','mm-active')
 @section('icon','pe-7s-note')
-@section('content-title','Edit Admin')
+@section('content-title','Edit User')
 @section('styles')
 @endsection
 @section('content')

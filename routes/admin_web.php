@@ -21,5 +21,9 @@ Route::prefix('admin')
            ##user management routes
            Route::resource('user','UserController');
            Route::get('user/datatable/ssd','UserController@ssd');
+
+           ##wallet routes
+           Route::get('wallet','WalletController@index')->name('wallet.index');
+           Route::get('wallet/datatable/ssd','WalletController@ssd')->name('wallet.ssd');
 });
 
