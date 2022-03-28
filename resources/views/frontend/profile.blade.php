@@ -23,7 +23,7 @@
                     </span>
                 </div>
             </a>
-            <a href="">
+            <a href="{{route('update.password')}}">
                 <div class="mt-1 d-flex justify-content-between align-items-center profile-content-buttons">
                     <span>
                         <i class="fas fa-eye mr-2"></i>
@@ -60,7 +60,8 @@
                 showCancelButton: true,
                 confirmButtonColor: '#775ada',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirm'
+                confirmButtonText: 'Confirm',
+                reverseButtons : true,
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({

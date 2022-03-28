@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-4 text-center">
                             <a href="">
-                                <h3 class="mb-0 primary-color font-weight-bolder">@yield('title','Magic Pay')</h3>
+                                <h3 class="mb-0 primary-color font-weight-bolder text-nowrap">@yield('title','Magic Pay')</h3>
                             </a>
                         </div>
                         <div class="col-4 text-center">
