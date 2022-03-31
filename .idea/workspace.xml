@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6490ae-d18d-4976-baa4-8f3e3208bc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdatePassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/image/check-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/image/pass_chagnge.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/update_password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wallet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/update_password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/update_password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +199,7 @@
       <workItem from="1646229414064" duration="28717000" />
       <workItem from="1647349411746" duration="21605000" />
       <workItem from="1647744564798" duration="6577000" />
-      <workItem from="1648363199721" duration="21861000" />
+      <workItem from="1648363199721" duration="34848000" />
     </task>
     <servers />
   </component>

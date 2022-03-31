@@ -74,16 +74,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-4 text-center">
-                            <a href="">
-                            </a>
+                        <div class="col-2 text-center">
+                            @if(!request()->is('/'))
+                                <a href="" class="back-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            @endif
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-8 text-center">
                             <a href="">
                                 <h3 class="mb-0 primary-color font-weight-bolder text-nowrap">@yield('title','Magic Pay')</h3>
                             </a>
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-2 text-center">
                             <a href="">
                                 <i class="fas fa-bell"></i>
                             </a>
@@ -110,22 +113,33 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-4 text-center">
+                        <a href="" class="scan">
+                            <div class="scan-icon">
+                                <i class="fas fa-qrcode text-white"></i>
+                            </div>
+                        </a>
+                        <div class="col-3 text-center">
                             <a href="{{route('home')}}">
                                 <i class="fas fa-home"></i>
-                                <p class="mb-0">HOME</p>
+                                <p class="mb-0">home</p>
                             </a>
                         </div>
-                        <div class="col-4 text-center">
-                            <a href="">
-                                <i class="fas fa-qrcode"></i>
-                                <p class="mb-0">SCAN</p>
+                        <div class="col-3 text-center">
+                            <a href="{{route('wallet')}}">
+                                <i class="fas fa-wallet"></i>
+                                <p class="mb-0">wallet</p>
                             </a>
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-3 text-center">
+                            <a href="{{route('home')}}">
+                                <i class="fas fa-exchange-alt"></i>
+                                <p class="mb-0">transaction</p>
+                            </a>
+                        </div>
+                        <div class="col-3 text-center">
                             <a href="{{route('profile')}}">
                                 <i class="fas fa-user-alt"></i>
-                                <p class="mb-0">PROFILE</p>
+                                <p class="mb-0">profile</p>
                             </a>
                         </div>
                     </div>
@@ -173,6 +187,11 @@
         })
 
         @endif
+
+        $('.back-btn').on('click',function (e){
+            e.preventDefault();
+            window.history.go(-1);
+        })
     })
 </script>
 @yield('scripts')

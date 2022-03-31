@@ -47,9 +47,6 @@
                                 <button type="submit" class="w-100 btn btn-primary border-radius p1035">
                                     {{ __('Update') }}
                                 </button>
-                                <button type="submit" class="mt-2 w-100 btn btn-danger border-radius p1035">
-                                    {{ __('Go Back') }}
-                                </button>
                             </div>
                         </div>
                     </div>

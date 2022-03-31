@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdatePassword;
-use http\Client\Curl\User;
-use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -41,5 +40,10 @@ class PageController extends Controller
 
         return redirect()->back()->withErrors(['fail'=>'Old password is not match!'])->withInput();
 
+    }
+
+    public function wallet(){
+        $authUser = auth()->guard('web')->user();
+        return view('frontend.wallet',compact('authUser'));
     }
 }
