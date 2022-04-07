@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TransferConfirm;
 use App\Http\Requests\UpdatePassword;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class PageController extends Controller
 {
     public function home(){
-        return view('frontend.home');
+        $user = Auth::guard('web')->user();
+        return view('frontend.home',compact('user'));
     }
 
     public function profile(){
@@ -45,5 +48,18 @@ class PageController extends Controller
     public function wallet(){
         $authUser = auth()->guard('web')->user();
         return view('frontend.wallet',compact('authUser'));
+    }
+
+    public function transfer(){
+        $authUser = auth()->guard('web')->user();
+        return view('frontend.transfer',compact('authUser'));
+    }
+
+    public function transferConfirm(TransferConfirm $request){
+        $authUser = auth()->guard('web')->user();
+        $receiver_phone = $request->receiver_phone;
+        $amount = $request->amount;
+        $desc = $request->desc;
+        return view('frontend.transfer_confirm',compact('authUser','receiver_phone','amount','desc'));
     }
 }

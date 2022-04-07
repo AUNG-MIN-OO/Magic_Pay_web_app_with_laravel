@@ -99,6 +99,43 @@ a:hover{
     display: block;
 }
 
+/*----------------------- home content ----------------------*/
+
+.home-profile-img img{
+    border-radius: var(--border-radius);
+    width: 80px;
+}
+
+.home-content{
+
+}
+
+.qr-code-home,.qr-scan-home{
+    width: 70px;
+    height: 70px;
+}
+
+.home-content-menu{
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 57px;
+}
+
+.home-content-menu-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.home-content-menu-icon img{
+    width: 30px;
+    height: 30px;
+}
+
 /*----------------------- main content ----------------------*/
 .profile-img{
     height: 170px;
@@ -286,6 +323,24 @@ a:hover{
     .swal2-title{
         font-size: 16px!important;
         margin-top: 5px !important;
+    }
+
+    .qr-code-home,.qr-scan-home{
+        width: 30px;
+        height: 30px;
+    }
+
+    .home-content-card .card-body{
+        padding: 12px;
+    }
+
+    .home-content-card span{
+        font-size: 13px;
+        display: block;
+    }
+
+    .home-content-menu .card-body{
+        padding: 8px;
     }
 }
 
