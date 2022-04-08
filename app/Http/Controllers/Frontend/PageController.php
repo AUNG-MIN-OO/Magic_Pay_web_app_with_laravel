@@ -55,7 +55,30 @@ class PageController extends Controller
         return view('frontend.transfer',compact('authUser'));
     }
 
+    public function receiverPhoneVerify(Request $request){
+        $authUser = auth()->guard('web')->user();
+
+        if ($authUser->phone != $request->phone){
+            $user = User::where('phone',$request->phone)->first();
+            if ($user){
+                return response()->json([
+                    'status' => 'success',
+                    'data' => $user
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => 'fail'
+        ]);
+    }
+
     public function transferConfirm(TransferConfirm $request){
+
+        if (!(User::where('phone',$request->receiver_phone)->first())){
+            return back()->withErrors(['receiver_phone'=>'Please enter valid phone number.'])->withInput();
+        }
+
         $authUser = auth()->guard('web')->user();
         $receiver_phone = $request->receiver_phone;
         $amount = $request->amount;

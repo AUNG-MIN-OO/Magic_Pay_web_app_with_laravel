@@ -20,6 +20,7 @@ Route::middleware('auth')->namespace('Frontend')->group(function (){
 
     Route::get('/transfer','PageController@transfer')->name('transfer');
     Route::post('/transfer/confirm','PageController@transferConfirm')->name('transfer.confirm');
+    Route::get('/receiver/phone/verify','PageController@receiverPhoneVerify')->name('receiver.phone.verify');
 });
 
 
