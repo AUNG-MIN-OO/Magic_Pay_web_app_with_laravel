@@ -19,7 +19,9 @@ Route::middleware('auth')->namespace('Frontend')->group(function (){
     Route::get('/wallet','PageController@wallet')->name('wallet');
 
     Route::get('/transfer','PageController@transfer')->name('transfer');
-    Route::post('/transfer/confirm','PageController@transferConfirm')->name('transfer.confirm');
+    Route::get('/transfer/confirm','PageController@transferConfirm')->name('transfer.confirm');
+    Route::post('/transfer/complete','PageController@transferComplete')->name('transfer.complete');
+    Route::get('/transfer/confirm/password','PageController@confirmPassword')->name('transfer.confirm.password');
     Route::get('/receiver/phone/verify','PageController@receiverPhoneVerify')->name('receiver.phone.verify');
 });
 

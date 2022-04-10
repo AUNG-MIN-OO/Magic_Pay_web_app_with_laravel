@@ -312,12 +312,16 @@ a:hover{
 
     .swal2-popup{
         width: 80% !important;
-        height: 225px!important;
     }
 
     .swal2-icon {
         width: 50px !important;
         height: 50px!important;
+    }
+
+    .swal2-icon.swal2-error{
+        width: 5rem!important;
+        height: 5rem!important;
     }
 
     .swal2-title{

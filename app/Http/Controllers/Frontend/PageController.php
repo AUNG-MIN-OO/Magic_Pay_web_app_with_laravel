@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\UUIDGenerate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TransferConfirm;
 use App\Http\Requests\UpdatePassword;
+use App\Transaction;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class PageController extends Controller
@@ -75,14 +78,105 @@ class PageController extends Controller
 
     public function transferConfirm(TransferConfirm $request){
 
-        if (!(User::where('phone',$request->receiver_phone)->first())){
+        $receiver_acc = User::where('phone',$request->receiver_phone)->first();
+
+        if (!($receiver_acc)){
             return back()->withErrors(['receiver_phone'=>'Please enter valid phone number.'])->withInput();
         }
 
         $authUser = auth()->guard('web')->user();
+
+        if ($authUser->phone == $request->receiver_phone){
+            return back()->withErrors(['receiver_phone'=>'Please enter valid phone number.'])->withInput();
+        }
+
         $receiver_phone = $request->receiver_phone;
         $amount = $request->amount;
         $desc = $request->desc;
-        return view('frontend.transfer_confirm',compact('authUser','receiver_phone','amount','desc'));
+        return view('frontend.transfer_confirm',compact('authUser','receiver_acc','receiver_phone','amount','desc'));
+    }
+
+    public function confirmPassword(Request $request){
+        $authUser = auth()->guard('web')->user();
+        $hash_check = Hash::check($request->password,$authUser->password);
+        if ($hash_check){
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Password is correct',
+            ]);
+        }
+
+        return response()->json([
+            'status' => 'fail',
+            'message' => 'Please check your password again.',
+        ]);
+    }
+
+    public function transferComplete(Request $request){
+
+        if ($request->amount < 1000){
+            return back()->withErrors(['amount'=>'Amount must be over 1000 MMK.']);
+        }
+
+        $receiver_acc = User::where('phone',$request->receiver_phone)->first();
+
+        if (!($receiver_acc)){
+            return back()->withErrors(['receiver_phone'=>'Please enter valid phone number.'])->withInput();
+        }
+
+        $authUser = auth()->guard('web')->user();
+
+        if ($authUser->phone == $request->receiver_phone){
+            return back()->withErrors(['receiver_phone'=>'Please enter valid phone number.'])->withInput();
+        }
+
+        $amount = $request->amount;
+        $desc = $request->desc;
+
+        if (!($authUser->wallet || $receiver_acc->wallet)){
+            return back()->withErrors(['fail' => 'Something went wrong!'])->withInput();
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $authUser_wallet = $authUser->wallet;
+            $authUser_wallet->decrement('amount',$amount);
+            $authUser_wallet->update();
+
+            $receiver_acc_wallet = $receiver_acc->wallet;
+            $receiver_acc_wallet->increment('amount',$amount);
+            $receiver_acc_wallet->update();
+
+            $ref_nbr = UUIDGenerate::refNumber();
+
+            $authUser_transaction = new Transaction();
+            $authUser_transaction->ref_nbr = $ref_nbr;
+            $authUser_transaction->trx_id = UUIDGenerate::trxNumber();
+            $authUser_transaction->user_id = $authUser->id;
+            $authUser_transaction->type = 2;
+            $authUser_transaction->amount = $amount;
+            $authUser_transaction->source_id = $receiver_acc->id;
+            $authUser_transaction->description = $desc;
+            $authUser_transaction->save();
+
+            $receiver_transaction = new Transaction();
+            $receiver_transaction->ref_nbr = $ref_nbr;
+            $receiver_transaction->trx_id = UUIDGenerate::trxNumber();
+            $receiver_transaction->user_id = $receiver_acc->id;
+            $receiver_transaction->type = 1;
+            $receiver_transaction->amount = $amount;
+            $receiver_transaction->source_id = $authUser->id;
+            $receiver_transaction->description = $desc;
+            $receiver_transaction->save();
+
+            DB::commit();
+
+            return  redirect('/')->with('transfer_success','Successfully transferred.');
+        }catch (\Exception $error){
+
+            DB::rollBack();
+            return back()->withErrors(['fail'=>'Something was wrong!'.$error->getMessage()])->withInput();
+        }
     }
 }

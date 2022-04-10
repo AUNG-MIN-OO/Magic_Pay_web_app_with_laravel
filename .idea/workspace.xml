@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6490ae-d18d-4976-baa4-8f3e3208bc6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_04_10_145642_create_transactions_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/UUIDGenerate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/UUIDGenerate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/transfer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/transfer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/transfer_confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/transfer_confirm.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +204,8 @@
       <workItem from="1648823494392" duration="611000" />
       <workItem from="1648956250204" duration="14000" />
       <workItem from="1648956278277" duration="612000" />
-      <workItem from="1649336283732" duration="11154000" />
+      <workItem from="1649336283732" duration="12196000" />
+      <workItem from="1649497582840" duration="7930000" />
     </task>
     <servers />
   </component>

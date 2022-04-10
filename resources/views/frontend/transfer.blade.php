@@ -4,8 +4,8 @@
     <div class="container transfer">
         <div class="card mt-3 border-0 shadow-sm border-radius">
             <div class="card-body">
-                <form action="{{route('transfer.confirm')}}" method="post">
-                    @csrf
+                <form action="{{route('transfer.confirm')}}" method="get">
+
                     <div class="form-group">
                         <label>From</label>
                         <div class="d-md-flex">
@@ -18,7 +18,7 @@
                         <div class="">
                             <p class="account_owner"></p>
                             <div class="input-group">
-                                <input type="number" class="form-control border-radius receiver_phone" name="receiver_phone" aria-describedby="basic-addon2">
+                                <input type="number" class="form-control border-radius receiver_phone" name="receiver_phone" aria-describedby="basic-addon2" value="{{old('receiver_phone')}}">
                                 <div class="input-group-append">
                                     <span class="btn btn-secondary border-radius verify_phone_btn"><i class="fas fa-check-circle"></i></span>
                                 </div>
