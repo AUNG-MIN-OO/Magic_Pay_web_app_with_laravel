@@ -234,6 +234,16 @@ a:hover{
     }
 }
 
+/*----------------------- scan ----------------------*/
+.transaction-detail-body_icon{
+    text-align: center;
+}
+
+.transaction-detail-body_icon_line{
+    border: 1px solid var(--primary-color);
+    width: 100%;
+}
+
 /*----------------------- bottom menu ----------------------*/
 .wallet .card{
     background-color: var(--primary-color);

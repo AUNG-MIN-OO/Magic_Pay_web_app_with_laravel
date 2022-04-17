@@ -23,6 +23,10 @@ Route::middleware('auth')->namespace('Frontend')->group(function (){
     Route::post('/transfer/complete','PageController@transferComplete')->name('transfer.complete');
     Route::get('/transfer/confirm/password','PageController@confirmPassword')->name('transfer.confirm.password');
     Route::get('/receiver/phone/verify','PageController@receiverPhoneVerify')->name('receiver.phone.verify');
+
+    ##transaction
+    Route::get('/transaction','PageController@transaction')->name('transaction');
+    Route::get('/transaction/detail/{id}','PageController@transactionDetail')->name('transaction.detail');
 });
 
 
