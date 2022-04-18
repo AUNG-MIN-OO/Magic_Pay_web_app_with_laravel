@@ -52,7 +52,7 @@
                 Swal.fire({
                     title: 'Please fill your password to confirm.',
                     icon: 'info',
-                    html: '<input type="password" name="password" class="form-control border-radius d-block text-center confirm_password" value="{{old('password')}}">',
+                    html: '<input type="password" name="password" class="form-control border-radius d-block text-center confirm_password" value="{{old('password')}}" autofocus>',
                     showCancelButton: true,
                     confirmButtonText : 'Confirm',
                     cancelButtonText : 'Cancel',

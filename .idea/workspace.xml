@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6490ae-d18d-4976-baa4-8f3e3208bc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/transaction.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/transaction_detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/image/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/jscroll.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MagicPay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MagicPay.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/transaction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/transaction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/transfer_confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/transfer_confirm.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +207,7 @@
       <workItem from="1648956278277" duration="612000" />
       <workItem from="1649336283732" duration="12196000" />
       <workItem from="1649497582840" duration="8495000" />
-      <workItem from="1650200491165" duration="11288000" />
+      <workItem from="1650200491165" duration="20849000" />
     </task>
     <servers />
   </component>

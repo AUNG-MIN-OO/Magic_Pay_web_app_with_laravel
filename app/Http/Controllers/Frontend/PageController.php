@@ -180,8 +180,18 @@ class PageController extends Controller
         }
     }
 
-    public function transaction(){
-        $transaction = Transaction::where('user_id',Auth::user()->id)->with('user')->orderByDesc('created_at')->paginate(5);
+    public function transaction(Request $request){
+        $transaction = Transaction::where('user_id',Auth::user()->id)->with('user')->orderByDesc('created_at');
+
+        if ($request->type){
+            $transaction = $transaction->where('type',$request->type);
+        }
+
+        if ($request->date){
+            $transaction = $transaction->whereDate('created_at',$request->date);
+        }
+
+        $transaction = $transaction->paginate('5');
         return view('frontend.transaction',compact('transaction'));
     }
 

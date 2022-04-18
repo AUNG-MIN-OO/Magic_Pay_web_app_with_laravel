@@ -14,6 +14,9 @@
     {{--    fontawesome--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
+    {{--    date picker--}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     @yield('styles')
 </head>
 <body class="background-color">
@@ -80,7 +83,7 @@
                             </a>
                         </div>
                         <div class="col-3 text-center">
-                            <a href="{{route('home')}}">
+                            <a href="{{route('transaction')}}">
                                 <i class="fas fa-exchange-alt"></i>
                                 <p class="mb-0">transaction</p>
                             </a>
@@ -103,6 +106,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 {{--sweetalert 2--}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{--jscroll--}}
+<script src="{{asset('frontend/js/jscroll.min.js')}}"></script>
+{{--date picker--}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
     $(document).ready(function (){
         let token = document.head.querySelector('meta[name="csrf-token"]');

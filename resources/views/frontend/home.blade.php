@@ -61,21 +61,23 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <div class="card border-0 shadow-sm border-radius mt-3">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="{{route('wallet')}}">
+                                <div class="card border-0 shadow-sm border-radius mt-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex justify-content-center align-items-center">
                                             <span class="home-content-menu-icon">
                                                 <img src="{{asset('frontend/image/wallet (1).png')}}" alt="">
                                             </span>
-                                            <span class="mb-0 font-weight-bold ml-2">My Wallet</span>
-                                        </div>
-                                        <span>
+                                                <span class="mb-0 font-weight-bold ml-2">My Wallet</span>
+                                            </div>
+                                            <span>
                                             <i class="fas fa-chevron-right"></i>
                                         </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row">
